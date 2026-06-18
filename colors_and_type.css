@@ -5,7 +5,7 @@
    ============================================================ */
 
 /* ---- Web fonts (Google Fonts; swap to local woff2 for prod) ---- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
 
 :root {
   /* ============================================================
@@ -13,27 +13,32 @@
      ONE accent. The black is doing the heavy lifting.
      ============================================================ */
 
-  /* Canvas */
-  --cn-black:           #000000;   /* the one true background */
-  --cn-black-95:        #0a0a0a;   /* hairline lift, rarely used */
+  /* Canvas — warm ivory document. Premium stationery, not a black void. */
+  --cn-black:           #F3EDE3;   /* page canvas — warm ivory (semantic name retained) */
+  --cn-black-95:        #FFFFFF;   /* input / field surface — clean white */
 
-  /* Brand accent — warm champagne-rose */
-  --cn-gold:            #C49F8C;   /* THE brand color. logo, headlines, italics, icons */
-  --cn-gold-bright:     #D8B5A2;   /* hover state */
-  --cn-gold-dim:        #9A7E70;   /* disabled / very-low-emphasis */
-  --cn-gold-tint-12:    rgba(196, 159, 140, 0.12); /* faint fills */
-  --cn-gold-tint-24:    rgba(196, 159, 140, 0.24); /* hairline borders */
+  /* Brand accent — deepened champagne to a readable bronze (AA on ivory + white) */
+  --cn-gold:            #9A5E2E;   /* THE brand color, deep enough for body labels & icons */
+  --cn-gold-bright:     #7E4A22;   /* hover — deepen on light */
+  --cn-gold-dim:        #C4A079;   /* disabled / very-low-emphasis */
+  --cn-gold-tint-12:    rgba(154, 94, 46, 0.10); /* faint fills */
+  --cn-gold-tint-24:    rgba(154, 94, 46, 0.24); /* hairline borders */
 
-  /* Surface — dark warm gray cards on black */
-  --cn-surface:         #464342;   /* card / panel surface */
-  --cn-surface-hover:   #535050;   /* card hover */
-  --cn-surface-edge:    #6F6C6C;   /* hairline divider, ~50% on black */
+  /* Surface — paper-white cards on the ivory canvas */
+  --cn-surface:         #FBF8F2;   /* card / panel surface */
+  --cn-surface-hover:   #F2E9D9;   /* card hover */
+  --cn-surface-edge:    #DBD0BD;   /* hairline divider on light */
 
-  /* Foreground — warm whites, never pure cool white */
-  --cn-fg:              #FFFFFF;   /* primary text on dark surfaces */
-  --cn-fg-muted:        #E2E2E1;   /* secondary text, body on black */
-  --cn-fg-subtle:       #B8B2B0;   /* tertiary, captions */
-  --cn-fg-faint:        #6F6C6C;   /* dividers, disabled */
+  /* Foreground — warm ink, never pure black */
+  --cn-fg:              #211A12;   /* primary text — headings, input text */
+  --cn-fg-muted:        #463B2E;   /* secondary text, body */
+  --cn-fg-subtle:       #6B5E4F;   /* tertiary, captions */
+  --cn-fg-faint:        #9E9079;   /* dividers, placeholders, disabled */
+
+  /* Masthead band — the brand's dark drama, retained as chrome */
+  --cn-band:            #17120F;   /* espresso masthead background */
+  --cn-band-gold:       #CBA078;   /* bright champagne accent on the dark band */
+  --cn-band-fg:         #E9DFD1;   /* light text on the dark band */
 
   /* Semantic — alias the brand colors for design-system use */
   --cn-fg1:             var(--cn-fg);
@@ -49,8 +54,8 @@
      TYPE — serif end-to-end. No sans anywhere.
      ============================================================ */
 
-  --cn-font-display:    'Cormorant Garamond', 'EB Garamond', Garamond, 'Times New Roman', serif;
-  --cn-font-body:       'Cardo', 'Cormorant Garamond', Garamond, Georgia, serif;
+  --cn-font-display:    'Libre Franklin', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --cn-font-body:       'Libre Franklin', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --cn-font-mono:       'Courier New', ui-monospace, monospace;
 
   /* Weights */
@@ -179,7 +184,7 @@
   font-weight: var(--cn-w-regular);
   line-height: var(--cn-lh-loose);
   color: var(--cn-fg2);
-  font-style: italic;
+  font-style: normal;
 }
 
 .cn-body {
@@ -207,7 +212,7 @@
 }
 
 .cn-italic {
-  font-style: italic;
+  font-style: normal;
   font-weight: inherit;
 }
 

@@ -11,13 +11,14 @@
 <link rel="stylesheet" href="colors_and_type.css">
 <style>
   *, *::before, *::after { box-sizing:border-box; }
-  html, body { margin:0; padding:0; }
-  #cnw { --cn-gold:#C68A5E; --cn-gold-bright:#DDA46F; --cn-gold-tint-24:rgba(198,138,94,0.26); }
+  html, body { margin:0; padding:0; background:#F3EDE3; }
+  #cnw { --cn-black:#F3EDE3; --cn-black-95:#FFFFFF; --cn-gold:#9A5E2E; --cn-gold-bright:#7E4A22; --cn-gold-dim:#C4A079; --cn-gold-tint-12:rgba(154,94,46,0.10); --cn-gold-tint-24:rgba(154,94,46,0.24); --cn-surface:#FBF8F2; --cn-surface-hover:#F2E9D9; --cn-surface-edge:#DBD0BD; --cn-fg:#211A12; --cn-fg-muted:#463B2E; --cn-fg-subtle:#6B5E4F; --cn-fg-faint:#9E9079; --cn-band:#17120F; --cn-band-gold:#CBA078; --cn-band-fg:#E9DFD1; --cn-ease:cubic-bezier(0.22,0.61,0.36,1); --cn-font-display:'Libre Franklin',system-ui,-apple-system,'Segoe UI',sans-serif; --cn-font-body:'Libre Franklin',system-ui,-apple-system,'Segoe UI',sans-serif; }
+  #cnw a { color:inherit; text-decoration:none; }
   #cnw a { text-decoration:none; }
-  @media (max-width:760px){ #cnw [data-cards]{ grid-template-columns:1fr !important; } }
+  @media (max-width:880px){ #cnw [data-cards]{ grid-template-columns:1fr !important; } }
   @media (max-width:600px){
     #cnw { padding:44px 20px !important; }
-    #cnw > img { transform:none !important; height:90px !important; margin-bottom:22px !important; }
+    #cnw > img { height:82px !important; margin-bottom:22px !important; }
     #cnw h1 { white-space:normal !important; font-size:34px !important; }
     #cnw [data-eyebrow] { font-size:12px !important; letter-spacing:0.18em !important; white-space:normal !important; }
     #cnw [data-rule] { width:20px !important; }
@@ -26,7 +27,7 @@
 </helmet>
 <div id="cnw" style="min-height:100vh; background:var(--cn-black); color:var(--cn-fg-muted); font-family:var(--cn-font-body); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:64px 32px;">
 
-  <img src="assets/logo-clean.png" alt="The Chief Negotiators" style="display:block; height:158px; width:auto; max-width:100%; margin:0 auto 34px; transform:translateX(-30px);">
+  <img src="assets/logo-light.png" alt="The Chief Negotiators" style="display:block; height:150px; width:auto; max-width:100%; margin:0 auto 40px;">
 
   <div style="display:flex; flex-direction:column; align-items:center; gap:22px; margin-bottom:54px; max-width:780px;">
     <div style="display:flex; align-items:center; justify-content:center; gap:18px;">
@@ -35,14 +36,14 @@
       <span data-rule style="width:64px; height:1px; background:var(--cn-gold-tint-24);"></span>
     </div>
 
-    <h1 style="font-family:var(--cn-font-display); font-size:52px; font-weight:700; color:var(--cn-fg); letter-spacing:-0.01em; line-height:1.1; text-align:center; margin:0; white-space:nowrap;">Vetted. Trusted. <span style="font-style:italic; color:var(--cn-gold);">Referred</span>.</h1>
-    <p style="font-family:var(--cn-font-body); font-size:18px; font-style:italic; color:var(--cn-fg-muted); text-align:center; max-width:620px; line-height:1.65; margin:0;">The Chief Negotiators is the trusted name our clients rely on. Suppliers we approve and deals we qualify become part of the network we refer them to — handled discreetly, and reviewed before anything proceeds.</p>
-    <p style="font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-subtle); text-align:center; max-width:560px; line-height:1.6; margin:6px 0 0;">Select the path that matches your enquiry to begin.</p>
+    <h1 style="font-family:var(--cn-font-display); font-size:52px; font-weight:700; color:var(--cn-fg); letter-spacing:-0.01em; line-height:1.1; text-align:center; margin:0; white-space:nowrap;">Vetted. Trusted. <span style="font-style:normal; color:var(--cn-gold);">Referred</span>.</h1>
+    <p style="font-family:var(--cn-font-body); font-size:20px; color:var(--cn-fg-muted); text-align:center; max-width:640px; line-height:1.7; margin:0;">The Chief Negotiators is the trusted name our clients rely on. Suppliers we approve and deals we qualify become part of the network we refer them to — handled discreetly, and reviewed before anything proceeds.</p>
+    <p style="font-family:var(--cn-font-body); font-size:17px; color:var(--cn-fg-subtle); text-align:center; max-width:560px; line-height:1.6; margin:6px 0 0;">Select the path that matches your enquiry to begin.</p>
   </div>
 
-  <div data-cards style="display:grid; grid-template-columns:1fr 1fr; gap:28px; width:100%; max-width:920px;">
+  <div data-cards style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; width:100%; max-width:1180px;">
 
-    <a href="supplier.html" style="position:relative; display:flex; flex-direction:column; text-align:left; background:var(--cn-surface); padding:38px 36px 34px; border:1px solid var(--cn-gold-tint-24); transition:background 300ms var(--cn-ease), border-color 300ms var(--cn-ease);" style-hover="background:#535050; border-color:var(--cn-gold);">
+    <a href="supplier.html" style="position:relative; display:flex; flex-direction:column; text-align:left; background:var(--cn-surface); padding:38px 36px 34px; border:1px solid var(--cn-gold-tint-24); transition:background 300ms var(--cn-ease), border-color 300ms var(--cn-ease);" style-hover="background:var(--cn-surface-hover); border-color:var(--cn-gold);">
       <span style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--cn-gold);"></span>
       <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:26px;">
         <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--cn-gold)" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="round">
@@ -53,12 +54,12 @@
       </div>
       <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--cn-gold); margin-bottom:12px;">Supplier</div>
       <div style="font-family:var(--cn-font-display); font-size:26px; font-weight:700; color:var(--cn-fg); line-height:1.15; margin-bottom:13px;">Join Our Supplier Network</div>
-      <div style="font-family:var(--cn-font-body); font-size:15px; color:var(--cn-fg-muted); line-height:1.65; flex:1;">You supply IT hardware — GPUs, servers, components — and want to be vetted and onboarded as an approved supplier.</div>
+      <div style="font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-muted); line-height:1.65; flex:1;">You supply IT hardware — GPUs, servers, components — and want to be vetted and onboarded as an approved supplier.</div>
       <div style="height:1px; background:var(--cn-gold-tint-24); margin:26px 0 18px;"></div>
       <div style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--cn-gold); display:flex; align-items:center; gap:10px;">Begin supplier verification <span style="font-size:18px;">&#8594;</span></div>
     </a>
 
-    <a href="customer.html" style="position:relative; display:flex; flex-direction:column; text-align:left; background:var(--cn-surface); padding:38px 36px 34px; border:1px solid var(--cn-gold-tint-24); transition:background 300ms var(--cn-ease), border-color 300ms var(--cn-ease);" style-hover="background:#535050; border-color:var(--cn-gold);">
+    <a href="customer.html" style="position:relative; display:flex; flex-direction:column; text-align:left; background:var(--cn-surface); padding:38px 36px 34px; border:1px solid var(--cn-gold-tint-24); transition:background 300ms var(--cn-ease), border-color 300ms var(--cn-ease);" style-hover="background:var(--cn-surface-hover); border-color:var(--cn-gold);">
       <span style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--cn-gold);"></span>
       <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:26px;">
         <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--cn-gold)" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="round">
@@ -70,19 +71,39 @@
       </div>
       <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--cn-gold); margin-bottom:12px;">Customer</div>
       <div style="font-family:var(--cn-font-display); font-size:26px; font-weight:700; color:var(--cn-fg); line-height:1.15; margin-bottom:13px;">Complete Deal Compliance</div>
-      <div style="font-family:var(--cn-font-body); font-size:15px; color:var(--cn-fg-muted); line-height:1.65; flex:1;">You are purchasing for a specific deal and need to complete compliance and qualification for the order.</div>
+      <div style="font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-muted); line-height:1.65; flex:1;">You are purchasing for a specific deal and need to complete compliance and qualification for the order.</div>
       <div style="height:1px; background:var(--cn-gold-tint-24); margin:26px 0 18px;"></div>
       <div style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--cn-gold); display:flex; align-items:center; gap:10px;">Begin compliance <span style="font-size:18px;">&#8594;</span></div>
     </a>
 
+    <a href="tenant.html" style="position:relative; display:flex; flex-direction:column; text-align:left; background:var(--cn-surface); padding:38px 36px 34px; border:1px solid var(--cn-gold-tint-24); transition:background 300ms var(--cn-ease), border-color 300ms var(--cn-ease);" style-hover="background:var(--cn-surface-hover); border-color:var(--cn-gold);">
+      <span style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--cn-gold);"></span>
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:26px;">
+        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--cn-gold)" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="round">
+          <rect x="7" y="9" width="34" height="12"></rect>
+          <rect x="7" y="27" width="34" height="12"></rect>
+          <path d="M13 15h0.02"></path>
+          <path d="M13 33h0.02"></path>
+          <path d="M20 15h14"></path>
+          <path d="M20 33h14"></path>
+        </svg>
+        <span style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.22em; color:var(--cn-fg-faint);">03</span>
+      </div>
+      <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--cn-gold); margin-bottom:12px;">Compute</div>
+      <div style="font-family:var(--cn-font-display); font-size:26px; font-weight:700; color:var(--cn-fg); line-height:1.15; margin-bottom:13px;">Qualify a Compute Deal</div>
+      <div style="font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-muted); line-height:1.65; flex:1;">You represent a tenant seeking large-scale GPU compute capacity and want the opportunity assessed and structured.</div>
+      <div style="height:1px; background:var(--cn-gold-tint-24); margin:26px 0 18px;"></div>
+      <div style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--cn-gold); display:flex; align-items:center; gap:10px;">Begin qualification <span style="font-size:18px;">&#8594;</span></div>
+    </a>
+
   </div>
 
-  <div style="margin-top:50px; display:flex; align-items:center; gap:12px; padding-top:24px; border-top:1px solid var(--cn-gold-tint-24); max-width:920px; width:100%; justify-content:center;">
+  <div style="margin-top:50px; display:flex; align-items:center; gap:12px; padding-top:24px; border-top:1px solid var(--cn-gold-tint-24); max-width:1180px; width:100%; justify-content:center;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cn-gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <rect x="5" y="11" width="14" height="9"></rect>
       <path d="M8 11V8a4 4 0 0 1 8 0v3"></path>
     </svg>
-    <span style="font-family:var(--cn-font-body); font-size:13px; font-style:italic; color:var(--cn-fg-faint); text-align:center;">Confidential. Submitted securely and reviewed by our team before anything proceeds.</span>
+    <span style="font-family:var(--cn-font-body); font-size:13px; font-style:normal; color:var(--cn-fg-faint); text-align:center;">Confidential. Submitted securely and reviewed by our team before anything proceeds.</span>
   </div>
 
 </div>

@@ -11,15 +11,16 @@
 <link rel="stylesheet" href="colors_and_type.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  #cnq { --cn-gold:#C68A5E; --cn-gold-bright:#DDA46F; --cn-gold-dim:#8F5E38; --cn-gold-tint-12:rgba(198,138,94,0.12); --cn-gold-tint-24:rgba(198,138,94,0.26); }
+  html, body { margin: 0; padding: 0; background:#F3EDE3; }
+  #cnq { --cn-black:#F3EDE3; --cn-black-95:#FFFFFF; --cn-gold:#9A5E2E; --cn-gold-bright:#7E4A22; --cn-gold-dim:#C4A079; --cn-gold-tint-12:rgba(154,94,46,0.10); --cn-gold-tint-24:rgba(154,94,46,0.24); --cn-surface:#FBF8F2; --cn-surface-hover:#F2E9D9; --cn-surface-edge:#DBD0BD; --cn-fg:#211A12; --cn-fg-muted:#463B2E; --cn-fg-subtle:#6B5E4F; --cn-fg-faint:#9E9079; --cn-band:#17120F; --cn-band-gold:#CBA078; --cn-band-fg:#E9DFD1; --cn-ease:cubic-bezier(0.22,0.61,0.36,1); --cn-font-display:'Libre Franklin',system-ui,-apple-system,'Segoe UI',sans-serif; --cn-font-body:'Libre Franklin',system-ui,-apple-system,'Segoe UI',sans-serif; }
+  #cnq a { color:inherit; text-decoration:none; }
   #cnq label { display:block; }
-  #cnq [data-l] { display:block; font-family:var(--cn-font-display); font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--cn-gold); margin-bottom:8px; }
-  #cnq input, #cnq select, #cnq textarea { width:100%; font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg); background:var(--cn-black-95); border:1px solid var(--cn-surface-edge); border-radius:0; padding:12px 14px; outline:none; transition:border-color 200ms var(--cn-ease); -webkit-appearance:none; appearance:none; }
+  #cnq [data-l] { display:block; font-family:var(--cn-font-body); font-size:16px; font-weight:700; letter-spacing:0.02em; text-transform:uppercase; color:var(--cn-fg); margin-bottom:9px; }
+  #cnq input, #cnq select, #cnq textarea { width:100%; font-family:var(--cn-font-body); font-size:18px; color:var(--cn-fg); background:var(--cn-black-95); border:1px solid var(--cn-surface-edge); border-radius:0; padding:14px 16px; outline:none; transition:border-color 200ms var(--cn-ease); -webkit-appearance:none; appearance:none; }
   #cnq textarea { resize:vertical; min-height:76px; line-height:1.5; }
   #cnq input:focus, #cnq select:focus, #cnq textarea:focus { border-color:var(--cn-gold); }
-  #cnq input::placeholder, #cnq textarea::placeholder { color:var(--cn-fg-faint); font-style:italic; }
-  #cnq select { background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23C68A5E' stroke-width='1.5'/></svg>"); background-repeat:no-repeat; background-position:right 14px center; padding-right:38px; cursor:pointer; }
+  #cnq input::placeholder, #cnq textarea::placeholder { color:var(--cn-fg-faint); font-style:normal; }
+  #cnq select { background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%239A5E2E' stroke-width='1.5'/></svg>"); background-repeat:no-repeat; background-position:right 14px center; padding-right:38px; cursor:pointer; }
   #cnq select option { background:#161413; color:var(--cn-fg); }
   #cnq input[type="checkbox"] { width:18px; height:18px; -webkit-appearance:auto; appearance:auto; accent-color:var(--cn-gold); cursor:pointer; }
   @keyframes cnqFade { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
@@ -29,7 +30,7 @@
   @media (max-width:720px) { #cnq [data-grid] { grid-template-columns:1fr !important; } }
   @media (max-width:600px) {
     #cnq header { padding:20px !important; gap:14px !important; }
-    #cnq header img { height:56px !important; }
+    #cnq header img { height:64px !important; }
     #cnq header > div { text-align:left !important; max-width:none !important; }
     #cnq main { padding-left:20px !important; padding-right:20px !important; }
     #cnq .cnq-noprint { padding-left:20px !important; padding-right:20px !important; }
@@ -41,22 +42,22 @@
 
   <div style="display:{{ formDisplay }};">
     <header style="border-bottom:1px solid var(--cn-gold-tint-24); padding:34px 40px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
-      <img src="assets/logo-clean.png" alt="The Chief Negotiators" style="height:96px; width:auto; display:block;">
+      <img src="assets/logo-light.png" alt="The Chief Negotiators" style="height:96px; width:auto; display:block;">
       <div style="text-align:right; max-width:360px;">
         <div style="font-family:var(--cn-font-display); font-size:15px; font-weight:700; color:var(--cn-fg); letter-spacing:0.02em; line-height:1.5;">We partner with suppliers we can verify.</div>
-        <div style="font-family:var(--cn-font-body); font-size:13px; color:var(--cn-fg-subtle); font-style:italic; margin-top:6px;">A one-time review before your first order — standard, confidential, and the same for every supplier we engage.</div>
+        <div style="font-family:var(--cn-font-body); font-size:13px; color:var(--cn-fg-subtle); font-style:normal; margin-top:6px;">A one-time review before your first order — standard, confidential, and the same for every supplier we engage.</div>
       </div>
     </header>
     <div class="cnq-noprint" style="padding:40px 40px 0; max-width:880px; margin:0 auto; width:100%;">
       <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px;">
-        <span style="display:inline-block; padding:7px 16px; border:1px solid var(--cn-gold); color:var(--cn-gold); font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase;">Pre-Engagement Due Diligence</span>
+        <span style="display:inline-block; flex:none; white-space:nowrap; padding:8px 16px; border:1px solid var(--cn-gold); color:var(--cn-gold); font-family:var(--cn-font-body); font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;">Pre-Engagement Due Diligence</span>
         <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--cn-fg-subtle); white-space:nowrap;">Step {{ stepNum }} of 7</div>
       </div>
-      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:14px;">
-        <div data-step-title style="font-family:var(--cn-font-display); font-size:40px; font-weight:700; color:var(--cn-fg); letter-spacing:-0.015em; line-height:1.05;">{{ stepTitle }}</div>
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:18px; margin-top:6px;">
+        <div data-step-title style="font-family:var(--cn-font-display); font-size:38px; font-weight:700; color:var(--cn-fg); letter-spacing:-0.015em; line-height:1.12;">{{ stepTitle }}</div>
       </div>
-      <div style="height:2px; background:var(--cn-surface); width:100%;"><div style="height:2px; background:var(--cn-gold); width:{{ pct }}%; transition:width 300ms var(--cn-ease);"></div></div>
-      <div style="font-family:var(--cn-font-body); font-style:italic; color:var(--cn-fg-subtle); font-size:15px; margin-top:14px; max-width:640px;">{{ stepIntro }}</div>
+      <div style="height:2px; background:var(--cn-surface-edge); width:100%;"><div style="height:2px; background:var(--cn-gold); width:{{ pct }}%; transition:width 300ms var(--cn-ease);"></div></div>
+      <div style="font-family:var(--cn-font-body); font-style:normal; color:var(--cn-fg-subtle); font-size:18px; margin-top:14px; max-width:640px;">{{ stepIntro }}</div>
     </div>
 
     <main style="max-width:880px; margin:0 auto; padding:28px 32px 40px; width:100%;">
@@ -76,7 +77,7 @@
       </section>
 
       <section style="display:{{ s1 }};">
-        <div style="border:1px solid var(--cn-gold-tint-24); padding:14px 18px; margin-bottom:22px; font-family:var(--cn-font-body); font-style:italic; font-size:14px; color:var(--cn-fg-subtle);">We confirm exactly who ultimately owns and controls the company we are paying. A single named owner of record is required.</div>
+        <div style="border:1px solid var(--cn-gold-tint-24); padding:14px 18px; margin-bottom:22px; font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-subtle);">We confirm exactly who ultimately owns and controls the company we are paying. A single named owner of record is required.</div>
         <div data-grid style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:20px 24px;">
           <label><span data-l>Ultimate Beneficial Owner *</span><input name="ubo1Name" value="{{ f.ubo1Name }}" onChange="{{ setField }}" placeholder="Full legal name of the controlling owner"></label>
           <label><span data-l>Ownership % *</span><input name="ubo1Pct" type="number" value="{{ f.ubo1Pct }}" onChange="{{ setField }}" placeholder="%"></label>
@@ -85,7 +86,7 @@
       </section>
 
       <section style="display:{{ s2 }};">
-        <div style="border:1px solid var(--cn-gold-tint-24); padding:14px 18px; margin-bottom:22px; font-family:var(--cn-font-body); font-style:italic; font-size:14px; color:var(--cn-fg-subtle);">The name on the receiving account must match your legal entity. A mismatch is the single most common indicator of wire-redirection fraud.</div>
+        <div style="border:1px solid var(--cn-gold-tint-24); padding:14px 18px; margin-bottom:22px; font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-subtle);">The name on the receiving account must match your legal entity. A mismatch is the single most common indicator of wire-redirection fraud.</div>
         <div data-grid style="display:grid; grid-template-columns:1fr 1fr; gap:20px 24px;">
           <label><span data-l>Beneficiary Bank Name *</span><input name="bankName" value="{{ f.bankName }}" onChange="{{ setField }}" placeholder="Bank holding the account"></label>
           <label><span data-l>Bank Country *</span><input name="bankCountry" value="{{ f.bankCountry }}" onChange="{{ setField }}" placeholder="Country of the receiving bank"></label>
@@ -155,32 +156,32 @@
         </div>
         <label style="display:flex; gap:14px; align-items:flex-start; margin-top:26px; border:1px solid var(--cn-gold-tint-24); padding:18px 20px; cursor:pointer;">
           <input name="accuracyAttest" type="checkbox" checked="{{ f.accuracyAttest }}" onChange="{{ setField }}" style="margin-top:4px; width:18px; height:18px; accent-color:var(--cn-gold);">
-          <span style="font-family:var(--cn-font-body); font-size:15px; color:var(--cn-fg-muted); line-height:1.6;">I attest that all information provided is true and complete. I authorize independent verification of this company, its beneficial owner, banking details, references, and inventory. I understand that any material misrepresentation ends this process immediately. *</span>
+          <span style="font-family:var(--cn-font-body); font-size:18px; color:var(--cn-fg-muted); line-height:1.6;">I attest that all information provided is true and complete. I authorize independent verification of this company, its beneficial owner, banking details, references, and inventory. I understand that any material misrepresentation ends this process immediately. *</span>
         </label>
       </section>
 
-      <div style="display:{{ errDisplay }}; margin-top:22px; border:1px solid var(--cn-gold); padding:12px 16px; font-family:var(--cn-font-body); font-style:italic; color:var(--cn-gold-bright); font-size:14px;">{{ errMsg }}</div>
+      <div style="display:{{ errDisplay }}; margin-top:22px; border:1px solid var(--cn-gold); padding:12px 16px; font-family:var(--cn-font-body); font-style:normal; color:var(--cn-gold-bright); font-size:14px;">{{ errMsg }}</div>
 
       <div class="cnq-noprint" style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:34px;">
         <button onClick="{{ back }}" style="display:{{ backDisplay }}; background:none; border:1px solid var(--cn-surface-edge); color:var(--cn-fg-muted); font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; padding:13px 26px; cursor:pointer;" style-hover="border-color:var(--cn-gold); color:var(--cn-gold);">Back</button>
         <div style="flex:1;"></div>
-        <button onClick="{{ next }}" style="display:{{ nextDisplay }}; background:var(--cn-gold); border:1px solid var(--cn-gold); color:#1a120c; font-family:var(--cn-font-display); font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:13px 30px; cursor:pointer;" style-hover="background:var(--cn-gold-bright); border-color:var(--cn-gold-bright);">Continue</button>
-        <button onClick="{{ submit }}" disabled="{{ submitting }}" style="display:{{ submitDisplay }}; opacity:{{ submitOpacity }}; background:var(--cn-gold); border:1px solid var(--cn-gold); color:#1a120c; font-family:var(--cn-font-display); font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:13px 30px; cursor:pointer;" style-hover="background:var(--cn-gold-bright); border-color:var(--cn-gold-bright);">{{ submitLabel }}</button>
+        <button onClick="{{ next }}" style="display:{{ nextDisplay }}; background:var(--cn-gold); border:1px solid var(--cn-gold); color:#FFFFFF; font-family:var(--cn-font-display); font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:13px 30px; cursor:pointer;" style-hover="background:var(--cn-gold-bright); border-color:var(--cn-gold-bright);">Continue</button>
+        <button onClick="{{ submit }}" disabled="{{ submitting }}" style="display:{{ submitDisplay }}; opacity:{{ submitOpacity }}; background:var(--cn-gold); border:1px solid var(--cn-gold); color:#FFFFFF; font-family:var(--cn-font-display); font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:13px 30px; cursor:pointer;" style-hover="background:var(--cn-gold-bright); border-color:var(--cn-gold-bright);">{{ submitLabel }}</button>
       </div>
     </main>
 
     <footer class="cnq-noprint" style="border-top:1px solid var(--cn-gold-tint-24); padding:18px 32px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
-      <span style="font-family:var(--cn-font-body); font-size:12px; color:var(--cn-fg-faint); font-style:italic;">Submissions are reviewed by a human analyst. A risk assessment is generated internally and never shown to the applicant.</span>
+      <span style="font-family:var(--cn-font-body); font-size:12px; color:var(--cn-fg-faint); font-style:normal;">Submissions are reviewed by a human analyst. A risk assessment is generated internally and never shown to the applicant.</span>
       <button onClick="{{ openAnalyst }}" style="background:none; border:none; color:var(--cn-fg-faint); font-family:var(--cn-font-display); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; cursor:pointer;" style-hover="color:var(--cn-gold);">Analyst Access</button>
     </footer>
   </div>
 
   <div style="display:{{ confirmDisplay }}; min-height:100vh; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:48px 32px;">
-    <img src="assets/logo-clean.png" alt="The Chief Negotiators" style="height:120px; width:auto; margin-bottom:44px;">
+    <img src="assets/logo-light.png" alt="The Chief Negotiators" style="height:96px; width:auto; margin-bottom:44px;">
     <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--cn-gold); margin-bottom:18px;">Submission Received</div>
-    <h1 style="font-family:var(--cn-font-display); font-size:46px; font-weight:700; color:var(--cn-fg); margin:0 0 22px; letter-spacing:-0.01em; line-height:1.1; max-width:640px;">Your application is <span style="font-style:italic; color:var(--cn-gold);">complete</span>.</h1>
+    <h1 style="font-family:var(--cn-font-display); font-size:46px; font-weight:700; color:var(--cn-fg); margin:0 0 22px; letter-spacing:-0.01em; line-height:1.1; max-width:640px;">Your application is <span style="font-style:normal; color:var(--cn-gold);">complete</span>.</h1>
     <p style="font-family:var(--cn-font-body); font-size:18px; color:var(--cn-fg-muted); line-height:1.7; max-width:540px; margin:0 0 14px;">Thank you. Our team will now review your submission. We will be in touch shortly.</p>
-    <p style="font-family:var(--cn-font-body); font-size:15px; color:var(--cn-fg-subtle); font-style:italic; line-height:1.7; max-width:520px; margin:0;">No further action is required from you at this time. A member of our team will personally reach out with next steps.</p>
+    <p style="font-family:var(--cn-font-body); font-size:15px; color:var(--cn-fg-subtle); font-style:normal; line-height:1.7; max-width:520px; margin:0;">No further action is required from you at this time. A member of our team will personally reach out with next steps.</p>
     <div style="margin-top:42px; font-family:var(--cn-font-display); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--cn-fg-faint);">Reference: {{ refCode }}</div>
   </div>
 
@@ -188,20 +189,20 @@
     <header class="cnq-noprint" style="border-bottom:1px solid var(--cn-gold-tint-24); padding:20px 32px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
       <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--cn-gold);">Internal · Analyst Risk Assessment</div>
       <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a href="{{ mailtoHref }}" style="text-decoration:none; background:var(--cn-gold); color:#1a120c; font-family:var(--cn-font-display); font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:10px 20px;">Email Me This Report</a>
+        <a href="{{ mailtoHref }}" style="text-decoration:none; background:var(--cn-gold); color:#FFFFFF; font-family:var(--cn-font-display); font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:10px 20px;">Email Me This Report</a>
         <button onClick="{{ printReport }}" style="background:none; border:1px solid var(--cn-surface-edge); color:var(--cn-fg-muted); font-family:var(--cn-font-display); font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; padding:10px 20px; cursor:pointer;">Print / PDF</button>
         <button onClick="{{ backToForm }}" style="background:none; border:1px solid var(--cn-surface-edge); color:var(--cn-fg-muted); font-family:var(--cn-font-display); font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; padding:10px 20px; cursor:pointer;">Back</button>
       </div>
     </header>
     <div style="max-width:900px; margin:0 auto; padding:40px 32px 80px;">
       <div style="font-family:var(--cn-font-display); font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:var(--cn-fg-subtle); margin-bottom:6px;">{{ rpt.legalName }}</div>
-      <div style="font-family:var(--cn-font-body); font-style:italic; color:var(--cn-fg-faint); font-size:14px; margin-bottom:30px;">Ref {{ refCode }} · {{ rpt.jurisdiction }}</div>
+      <div style="font-family:var(--cn-font-body); font-style:normal; color:var(--cn-fg-faint); font-size:14px; margin-bottom:30px;">Ref {{ refCode }} · {{ rpt.jurisdiction }}</div>
 
       <div style="border:1px solid {{ rpt.verdictColor }}; padding:30px 34px; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; margin-bottom:34px;">
         <div>
           <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--cn-fg-subtle); margin-bottom:10px;">Recommendation</div>
           <div style="font-family:var(--cn-font-display); font-size:52px; font-weight:700; line-height:1; color:{{ rpt.verdictColor }};">{{ rpt.verdict }}</div>
-          <div style="font-family:var(--cn-font-body); font-style:italic; font-size:15px; color:var(--cn-fg-muted); margin-top:12px; max-width:430px;">{{ rpt.verdictNote }}</div>
+          <div style="font-family:var(--cn-font-body); font-style:normal; font-size:15px; color:var(--cn-fg-muted); margin-top:12px; max-width:430px;">{{ rpt.verdictNote }}</div>
         </div>
         <div style="text-align:center;">
           <div style="font-family:var(--cn-font-display); font-size:64px; font-weight:700; line-height:1; color:{{ rpt.verdictColor }};">{{ rpt.score }}</div>
@@ -210,10 +211,10 @@
       </div>
 
       <div style="display:{{ rpt.blockersDisplay }}; margin-bottom:34px;">
-        <div style="font-family:var(--cn-font-display); font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#C77B66; margin-bottom:14px;">Hard Blockers — Do Not Proceed Until Cleared</div>
+        <div style="font-family:var(--cn-font-display); font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#B5503A; margin-bottom:14px;">Hard Blockers — Do Not Proceed Until Cleared</div>
         <div style="display:flex; flex-direction:column; gap:10px;">
           <sc-for list="{{ rpt.blockers }}" as="b" hint-placeholder-count="0">
-            <div style="border-left:2px solid #C77B66; background:var(--cn-black-95); padding:14px 18px; font-family:var(--cn-font-body); font-size:15px; color:var(--cn-fg-muted); line-height:1.55;">{{ b }}</div>
+            <div style="border-left:2px solid #B5503A; background:var(--cn-black-95); padding:14px 18px; font-family:var(--cn-font-body); font-size:15px; color:var(--cn-fg-muted); line-height:1.55;">{{ b }}</div>
           </sc-for>
         </div>
       </div>
@@ -226,7 +227,7 @@
               <span style="font-family:var(--cn-font-body); font-size:15px; color:var(--cn-fg);">{{ c.name }}</span>
               <span style="font-family:var(--cn-font-display); font-size:14px; color:var(--cn-fg-subtle);">{{ c.score }} / {{ c.weight }}</span>
             </div>
-            <div style="height:4px; background:var(--cn-surface); width:100%;"><div style="height:4px; background:{{ c.color }}; width:{{ c.pct }}%;"></div></div>
+            <div style="height:4px; background:var(--cn-surface-edge); width:100%;"><div style="height:4px; background:{{ c.color }}; width:{{ c.pct }}%;"></div></div>
           </div>
         </sc-for>
       </div>
@@ -337,6 +338,7 @@ class Component extends DCLogic {
       'Red Flags': rpt.flags.length ? rpt.flags.join('  |  ') : 'None'
     };
     rpt.rows.forEach(r => { payload[r.k] = r.v; });
+    try{var __k='cn_submissions';var __a=JSON.parse(localStorage.getItem(__k)||'[]');__a.push({form:'Supplier Vetting',ref:code,at:new Date().toISOString(),data:payload});localStorage.setItem(__k,JSON.stringify(__a));}catch(e){}
     this.setState({ submitting: true, errMsg: '' });
     try {
       const res = await fetch(this.ENDPOINT, {
@@ -413,7 +415,7 @@ class Component extends DCLogic {
     const weights = { legal:18, owner:14, bank:22, product:18, finance:12, refs:16 };
     const names = { legal:'Legal & Registration', owner:'Beneficial Ownership', bank:'Banking Integrity', product:'Product Authenticity & Stock', finance:'Financial Standing', refs:'References & Verification' };
     const order = ['bank','product','owner','legal','refs','finance'];
-    const gold = '#C68A5E', amber = '#B8B2B0', red = '#C77B66';
+    const gold = '#9A5E2E', amber = '#B07A1E', red = '#B5503A';
     let score = 0;
     const categories = order.map(k => {
       const earned = Math.round(cat[k]*weights[k]);
