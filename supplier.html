@@ -27,6 +27,14 @@
   #cnq ::-webkit-scrollbar-thumb { background:var(--cn-surface); }
   @media print { #cnq .cnq-noprint { display:none !important; } #cnq, #cnq .cnq-report { background:#fff !important; } }
   @media (max-width:720px) { #cnq [data-grid] { grid-template-columns:1fr !important; } }
+  @media (max-width:600px) {
+    #cnq header { padding:20px !important; gap:14px !important; }
+    #cnq header img { height:56px !important; }
+    #cnq header > div { text-align:left !important; max-width:none !important; }
+    #cnq main { padding-left:20px !important; padding-right:20px !important; }
+    #cnq .cnq-noprint { padding-left:20px !important; padding-right:20px !important; }
+    #cnq [data-step-title] { font-size:30px !important; }
+  }
 </style>
 </helmet>
 <div id="cnq" style="min-height:100vh; background:var(--cn-black); color:var(--cn-fg-muted); font-family:var(--cn-font-body); line-height:1.5;">
@@ -45,7 +53,7 @@
         <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--cn-fg-subtle); white-space:nowrap;">Step {{ stepNum }} of 7</div>
       </div>
       <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:14px;">
-        <div style="font-family:var(--cn-font-display); font-size:40px; font-weight:700; color:var(--cn-fg); letter-spacing:-0.015em; line-height:1.05;">{{ stepTitle }}</div>
+        <div data-step-title style="font-family:var(--cn-font-display); font-size:40px; font-weight:700; color:var(--cn-fg); letter-spacing:-0.015em; line-height:1.05;">{{ stepTitle }}</div>
       </div>
       <div style="height:2px; background:var(--cn-surface); width:100%;"><div style="height:2px; background:var(--cn-gold); width:{{ pct }}%; transition:width 300ms var(--cn-ease);"></div></div>
       <div style="font-family:var(--cn-font-body); font-style:italic; color:var(--cn-fg-subtle); font-size:15px; margin-top:14px; max-width:640px;">{{ stepIntro }}</div>
