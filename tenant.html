@@ -118,11 +118,14 @@ class Component extends DCLogic {
     super(props);
     this.state = { view:'form', step:0, fields:{}, submitting:false, errMsg:'', refCode:'' };
     this.ENDPOINT = 'https://api.web3forms.com/submit';
-    this.ACCESS_KEY = 'b7f20bd3-70a6-4a11-8a79-c7fe7158d05a';
+    this.ACCESS_KEY = '7f1ff338-3ebd-4053-8253-76e5e1a5f40e';
   }
 
   schema(){ return [
-    { title:'Off-taker', intro:'', fields:[
+    { title:'Your Details & Off-taker', intro:'', fields:[
+      { t:'text', n:'contactName', l:'Your Name', req:true },
+      { t:'text', n:'contactEmail', l:'Your Email', req:true },
+      { t:'text', n:'contactPhone', l:'Your Phone Number', req:true },
       { t:'text', n:'offTaker', l:'Off-taker Name', req:true },
       { t:'text', n:'offTakerContact', l:'Off-taker Contact' }
     ]},
@@ -208,7 +211,7 @@ class Component extends DCLogic {
     const code = this.state.refCode || this.mkCode();
     const sections = this.schema();
     const f = this.state.fields;
-    const payload = { access_key:this.ACCESS_KEY, subject:'[Tenant Qualification] '+(f.offTaker||'Unnamed')+' ('+code+')', from_name:'Tenant Qualification \u2014 '+(f.offTaker||'Unnamed'), Reference:code };
+    const payload = { access_key:this.ACCESS_KEY, subject:'[Tenant Qualification] '+(f.offTaker||'Unnamed')+' ('+code+')', from_name:'Tenant Qualification \u2014 '+(f.offTaker||'Unnamed'), replyto:(f.contactEmail||''), Reference:code };
     sections.forEach(sec => { sec.fields.forEach(fld => {
       if(fld.t==='note'||fld.t==='subhead') return;
       const v = f[fld.n];
