@@ -1,15 +1,16 @@
 # The Chief Negotiators — Compliance & Onboarding
 
-Static site for **compliance.thechiefnegotiators.com**. Three self-contained pages:
+Static site for **compliance.thechiefnegotiators.com**. Four self-contained pages:
 
 | File | Purpose |
 |---|---|
-| `index.html` | Landing page — routes visitors to Supplier or Customer |
+| `index.html` | Landing page — routes visitors to Supplier, Customer, or Compute Deal |
 | `supplier.html` | Supplier vetting form (scored, with internal analyst report) |
 | `customer.html` | Customer compliance questionnaire (T1 / T2 / T3) |
+| `tenant.html` | Compute deal qualification form (off-taker / GPU capacity) |
 | `support.js` | Runtime required by the pages (keep alongside) |
 | `colors_and_type.css` | Brand design tokens |
-| `assets/logo-clean.png` | Logo |
+| `assets/logo-light.png` | Logo |
 | `CNAME` | GitHub Pages custom-domain config |
 
 ## Deploy with GitHub Pages
@@ -20,4 +21,6 @@ Static site for **compliance.thechiefnegotiators.com**. Three self-contained pag
 4. At your DNS provider, add a **CNAME record**: host `compliance` → value `<your-username>.github.io`.
 5. Wait for DNS to propagate, then tick **Enforce HTTPS**.
 
-Form submissions are sent via Web3Forms to the configured inbox. To change the destination, replace the `access_key` value in `supplier.html` and `customer.html`.
+## Form submissions
+
+Submissions are sent via Web3Forms to the configured inbox, and a local backup of every submission is also retained in the browser. To change the destination, replace the `access_key` value in `supplier.html`, `customer.html`, and `tenant.html`.
