@@ -158,6 +158,10 @@
           <input name="accuracyAttest" type="checkbox" checked="{{ f.accuracyAttest }}" onChange="{{ setField }}" style="margin-top:4px; width:18px; height:18px; accent-color:var(--cn-gold);">
           <span style="font-family:var(--cn-font-body); font-size:18px; color:var(--cn-fg-muted); line-height:1.6;">I attest that all information provided is true and complete. I authorize independent verification of this company, its beneficial owner, banking details, references, and inventory. I understand that any material misrepresentation ends this process immediately. *</span>
         </label>
+        <label style="display:flex; gap:14px; align-items:flex-start; margin-top:14px; border:1px solid var(--cn-gold-tint-24); padding:18px 20px; cursor:pointer;">
+          <input name="dataConsent" type="checkbox" checked="{{ f.dataConsent }}" onChange="{{ setField }}" style="margin-top:4px; width:18px; height:18px; accent-color:var(--cn-gold);">
+          <span style="font-family:var(--cn-font-body); font-size:18px; color:var(--cn-fg-muted); line-height:1.6;">I consent to The Chief Negotiators storing and processing this information for the sole purpose of supplier verification. I understand it is held in confidence, restricted to the review team, and retained only for our records. *</span>
+        </label>
       </section>
 
       <div style="display:{{ errDisplay }}; margin-top:22px; border:1px solid var(--cn-gold); padding:12px 16px; font-family:var(--cn-font-body); font-style:normal; color:var(--cn-gold-bright); font-size:14px;">{{ errMsg }}</div>
@@ -275,7 +279,7 @@ class Component extends DCLogic {
       productCategories:'', brands:'', brandAuthorized:'', authProof:'', stockOnHand:'', proofStock:'', leadTime:'', sampleWilling:'', serialsSample:'',
       yearsTrading:'', annualRevenue:'', auditedFinancials:'', dunsNumber:'', creditInsurance:'', legalDisputes:'',
       ref1Name:'', ref1Company:'', ref1Email:'', ref1Phone:'', ref2Name:'', ref2Company:'', ref2Email:'', ref2Phone:'', platformProfile:'', siteVisit:'', videoCall:'',
-      exportCompliance:'', sanctionsAttest:'', signName:'', signTitle:'', signDate:'', accuracyAttest:false
+      exportCompliance:'', sanctionsAttest:'', signName:'', signTitle:'', signDate:'', accuracyAttest:false, dataConsent:false
     };
     this.state = { step:0, fields:blank, view:'form', errMsg:'', refCode:'', submitting:false };
     this.ENDPOINT = 'https://api.web3forms.com/submit';
@@ -297,7 +301,7 @@ class Component extends DCLogic {
       [['brands','Brands Supplied'],['brandAuthorized','Authorization status'],['stockOnHand','Inventory status'],['proofStock','Stock proof'],['sampleWilling','Sample willingness']],
       [['yearsTrading','Years Trading'],['annualRevenue','Annual Revenue'],['auditedFinancials','Audited financials']],
       [['ref1Name','Reference 1 Name'],['ref1Email','Reference 1 Email'],['siteVisit','Site-visit willingness'],['videoCall','Video-call willingness']],
-      [['exportCompliance','Export-control confirmation'],['sanctionsAttest','Sanctions confirmation'],['signName','Signatory Name'],['signDate','Date'],['accuracyAttest','Accuracy attestation']]
+      [['exportCompliance','Export-control confirmation'],['sanctionsAttest','Sanctions confirmation'],['signName','Signatory Name'],['signDate','Date'],['accuracyAttest','Accuracy attestation'],['dataConsent','Data-handling consent']]
     ];
   }
   setField = (e) => {
@@ -309,7 +313,7 @@ class Component extends DCLogic {
     const f = this.state.fields, miss = [];
     for (const [name,label] of this.required[this.state.step]) {
       const v = f[name];
-      if (name === 'accuracyAttest') { if (v !== true) miss.push(label); }
+      if (name === 'accuracyAttest' || name === 'dataConsent') { if (v !== true) miss.push(label); }
       else if (v === '' || v === undefined || v === null) miss.push(label);
     }
     return miss;
@@ -449,7 +453,7 @@ class Component extends DCLogic {
       ['productCategories','Product Categories'],['brands','Brands'],['brandAuthorized','Authorized Reseller'],['authProof','Auth Proof Available'],['stockOnHand','Inventory Status'],['proofStock','Stock Proof Available'],['leadTime','Lead Time'],['sampleWilling','Sample Order'],['serialsSample','Sample Serials'],
       ['yearsTrading','Years Trading'],['annualRevenue','Annual Revenue'],['auditedFinancials','Audited Financials'],['dunsNumber','D-U-N-S'],['creditInsurance','Credit Insurance'],['legalDisputes','Litigation / Insolvency'],
       ['ref1Name','Reference 1'],['ref1Company','Ref 1 Company'],['ref1Email','Ref 1 Email'],['ref1Phone','Ref 1 Phone'],['ref2Name','Reference 2'],['ref2Company','Ref 2 Company'],['ref2Email','Ref 2 Email'],['ref2Phone','Ref 2 Phone'],['platformProfile','Marketplace Profile'],['siteVisit','Permits Site Visit'],['videoCall','Permits Video Call'],
-      ['exportCompliance','Export Compliance'],['sanctionsAttest','Sanctions Attestation'],['signName','Signatory'],['signTitle','Signatory Title'],['signDate','Signed Date'],['accuracyAttest','Accuracy Attested']
+      ['exportCompliance','Export Compliance'],['sanctionsAttest','Sanctions Attestation'],['signName','Signatory'],['signTitle','Signatory Title'],['signDate','Signed Date'],['accuracyAttest','Accuracy Attested'],['dataConsent','Data-Handling Consent']
     ];
     const rows = labels.map(([k,lab]) => ({ k: lab, v: this.disp(f[k]) }));
 

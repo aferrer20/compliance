@@ -123,6 +123,8 @@ class Component extends DCLogic {
 
   schema(){ return [
     { title:'Your Details & Off-taker', intro:'', fields:[
+      { t:'subhead', l:'Held in Confidence' },
+      { t:'note', l:'What you share stays in confidence. We use it solely to qualify this opportunity, restrict it to our review team, and never disclose it to any counterparty. If your disclosure requires a mutual NDA, ask us before you begin \u2014 we will arrange one.' },
       { t:'text', n:'contactName', l:'Your Name', req:true },
       { t:'text', n:'contactEmail', l:'Your Email', req:true },
       { t:'text', n:'contactPhone', l:'Your Phone Number', req:true },
