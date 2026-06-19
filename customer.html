@@ -536,10 +536,11 @@ class Component extends DCLogic {
     this.setState({ submitting:true, errMsg:'' });
     try{
       const res = await fetch(this.ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(payload) });
-      if(!res.ok) throw new Error('HTTP '+res.status);
+      let data = {}; try{ data = await res.json(); }catch(e){}
+      if(!res.ok || data.success===false) throw new Error(data.message || ('HTTP '+res.status));
       this.setState({ view:'confirm', refCode:code, submitting:false });
     }catch(err){
-      this.setState({ submitting:false, errMsg:'We could not submit your questionnaire just now. Please check your connection and try again.' });
+      this.setState({ submitting:false, errMsg:'We could not submit your questionnaire. '+(err.message||'Please try again.')+' Your responses have been saved on this device as a backup \u2014 please contact us so we can complete your submission.' });
     }
     if(typeof window!=='undefined') window.scrollTo(0,0);
   };
