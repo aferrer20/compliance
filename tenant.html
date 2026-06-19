@@ -134,7 +134,7 @@ class Component extends DCLogic {
     { title:'Cluster Specifications', intro:'', fields:[
       { t:'select', n:'gpuModel', l:'GPU Model', o:['H100','H200','B200','GB200','B300','GB300','A100','MI300X','Other'] },
       { t:'text', n:'nodesPerCluster', l:'Nodes per Cluster' },
-      { t:'text', n:'gpusPerCluster', l:'GPUs per Cluster' },
+      { t:'text', n:'gpusPerNode', l:'GPUs per Node' },
       { t:'text', n:'clusterConfig', l:'Cluster Configuration' },
       { t:'text', n:'initialPower', l:'Initial Power per Cluster' },
       { t:'text', n:'scalePotential', l:'Scale Potential per Cluster' },
@@ -145,6 +145,7 @@ class Component extends DCLogic {
       { t:'text', n:'networking', l:'Networking' },
       { t:'text', n:'latency', l:'Latency Requirements' },
       { t:'text', n:'cooling', l:'Cooling' },
+      { t:'yesno', n:'additionalStorage', l:'Additional Storage Needed?' },
       { t:'text', n:'clusterColocation', l:'Cluster Co-location' },
       { t:'text', n:'trainInfer', l:'% Training to % Inference' },
       { t:'text', n:'powerUtil', l:'% of Power Utilization' }

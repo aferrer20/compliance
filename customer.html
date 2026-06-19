@@ -89,18 +89,18 @@
         <div style="{{ fld.wrapStyle }}">
           <sc-if value="{{ fld.isSubhead }}" hint-placeholder-val="{{ false }}"><div style="font-family:var(--cn-font-display); font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--cn-fg-subtle); border-bottom:1px solid var(--cn-gold-tint-24); padding-bottom:8px;">{{ fld.label }}</div></sc-if>
           <sc-if value="{{ fld.isNote }}" hint-placeholder-val="{{ false }}"><div style="font-family:var(--cn-font-body); font-style:normal; font-size:14px; color:var(--cn-fg-subtle); line-height:1.6; border-left:2px solid var(--cn-gold-tint-24); padding-left:14px;">{{ fld.label }}</div></sc-if>
-          <sc-if value="{{ fld.isText }}" hint-placeholder-val="{{ false }}"><label><span data-l>{{ fld.label }}</span><input type="text" value="{{ fld.value }}" onChange="{{ fld.onInput }}" placeholder="{{ fld.placeholder }}"></label></sc-if>
-          <sc-if value="{{ fld.isArea }}" hint-placeholder-val="{{ false }}"><label><span data-l>{{ fld.label }}</span><textarea value="{{ fld.value }}" onChange="{{ fld.onInput }}" placeholder="{{ fld.placeholder }}"></textarea></label></sc-if>
-          <sc-if value="{{ fld.isDate }}" hint-placeholder-val="{{ false }}"><label><span data-l>{{ fld.label }}</span><input type="date" value="{{ fld.value }}" onChange="{{ fld.onInput }}"></label></sc-if>
-          <sc-if value="{{ fld.isSelect }}" hint-placeholder-val="{{ false }}"><label><span data-l>{{ fld.label }}</span><select value="{{ fld.value }}" onChange="{{ fld.onInput }}"><option value="">Select...</option><sc-for list="{{ fld.options }}" as="op"><option value="{{ op.v }}">{{ op.l }}</option></sc-for></select></label></sc-if>
+          <sc-if value="{{ fld.isText }}" hint-placeholder-val="{{ false }}"><label><span data-l>{{ fld.label }}<sc-if value="{{ fld.req }}" hint-placeholder-val="{{ false }}"><span style="color:var(--cn-gold); font-weight:700;"> *</span></sc-if></span><input type="text" value="{{ fld.value }}" onChange="{{ fld.onInput }}" placeholder="{{ fld.placeholder }}"></label></sc-if>
+          <sc-if value="{{ fld.isArea }}" hint-placeholder-val="{{ false }}"><label><span data-l>{{ fld.label }}<sc-if value="{{ fld.req }}" hint-placeholder-val="{{ false }}"><span style="color:var(--cn-gold); font-weight:700;"> *</span></sc-if></span><textarea value="{{ fld.value }}" onChange="{{ fld.onInput }}" placeholder="{{ fld.placeholder }}"></textarea></label></sc-if>
+          <sc-if value="{{ fld.isDate }}" hint-placeholder-val="{{ false }}"><label><span data-l>{{ fld.label }}<sc-if value="{{ fld.req }}" hint-placeholder-val="{{ false }}"><span style="color:var(--cn-gold); font-weight:700;"> *</span></sc-if></span><input type="date" value="{{ fld.value }}" onChange="{{ fld.onInput }}"></label></sc-if>
+          <sc-if value="{{ fld.isSelect }}" hint-placeholder-val="{{ false }}"><label><span data-l>{{ fld.label }}<sc-if value="{{ fld.req }}" hint-placeholder-val="{{ false }}"><span style="color:var(--cn-gold); font-weight:700;"> *</span></sc-if></span><select value="{{ fld.value }}" onChange="{{ fld.onInput }}"><option value="">Select...</option><sc-for list="{{ fld.options }}" as="op"><option value="{{ op.v }}">{{ op.l }}</option></sc-for></select></label></sc-if>
           <sc-if value="{{ fld.isYesno }}" hint-placeholder-val="{{ false }}">
             <div data-yesno style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px; border-bottom:1px solid var(--cn-gold-tint-24); padding-bottom:16px;">
-              <div style="font-family:var(--cn-font-body); font-size:18px; color:var(--cn-fg-muted); line-height:1.55; flex:1;">{{ fld.label }}</div>
+              <div style="font-family:var(--cn-font-body); font-size:18px; color:var(--cn-fg-muted); line-height:1.55; flex:1;">{{ fld.label }}<sc-if value="{{ fld.req }}" hint-placeholder-val="{{ false }}"><span style="color:var(--cn-gold); font-weight:700;"> *</span></sc-if></div>
               <select value="{{ fld.value }}" onChange="{{ fld.onInput }}" style="width:120px; flex:none;"><option value="">—</option><option value="No">No</option><option value="Yes">Yes</option></select>
             </div>
           </sc-if>
           <sc-if value="{{ fld.isMulti }}" hint-placeholder-val="{{ false }}">
-            <span data-l>{{ fld.label }}</span>
+            <span data-l>{{ fld.label }}<sc-if value="{{ fld.req }}" hint-placeholder-val="{{ false }}"><span style="color:var(--cn-gold); font-weight:700;"> *</span></sc-if></span>
             <div style="display:flex; flex-wrap:wrap; gap:10px 14px;">
               <sc-for list="{{ fld.options }}" as="op">
                 <label style="display:flex; align-items:center; gap:9px; padding:11px 16px; border:1px solid var(--cn-surface-edge); cursor:pointer; font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-muted);"><input type="checkbox" checked="{{ op.checked }}" onChange="{{ op.toggle }}">{{ op.label }}</label>
@@ -108,7 +108,7 @@
             </div>
           </sc-if>
           <sc-if value="{{ fld.isAgree }}" hint-placeholder-val="{{ false }}">
-            <label style="display:flex; gap:14px; align-items:flex-start; border:1px solid var(--cn-gold-tint-24); padding:16px 18px; cursor:pointer;"><input type="checkbox" checked="{{ fld.checked }}" onChange="{{ fld.onToggle }}" style="margin-top:3px;"><span style="font-family:var(--cn-font-body); font-size:18px; color:var(--cn-fg-muted); line-height:1.6;">{{ fld.label }}</span></label>
+            <label style="display:flex; gap:14px; align-items:flex-start; border:1px solid var(--cn-gold-tint-24); padding:16px 18px; cursor:pointer;"><input type="checkbox" checked="{{ fld.checked }}" onChange="{{ fld.onToggle }}" style="margin-top:3px;"><span style="font-family:var(--cn-font-body); font-size:18px; color:var(--cn-fg-muted); line-height:1.6;">{{ fld.label }}<sc-if value="{{ fld.req }}" hint-placeholder-val="{{ false }}"><span style="color:var(--cn-gold); font-weight:700;"> *</span></sc-if></span></label>
           </sc-if>
           <sc-if value="{{ fld.hasHint }}" hint-placeholder-val="{{ false }}"><div style="font-family:var(--cn-font-body); font-style:normal; font-size:15px; color:var(--cn-fg-subtle); line-height:1.6; margin-top:8px;">{{ fld.hint }}</div></sc-if>
         </div>
@@ -495,9 +495,15 @@ class Component extends DCLogic {
     return miss;
   }
 
+  missMsg(miss){
+    const short = miss.map(l => l.length>56 ? l.slice(0,56).trim()+'\u2026' : l);
+    const lead = miss.length===1 ? 'One required item still needs an answer: ' : miss.length+' required items still need an answer: ';
+    return lead + short.join('  \u2022  ') + '.';
+  }
+
   next = () => {
     const miss = this.validateStep();
-    if(miss.length){ this.setState({ errMsg:'Please complete the required items in this section.' }); return; }
+    if(miss.length){ this.setState({ errMsg:this.missMsg(miss) }); return; }
     const total = this.schemaFor(this.state.tier).length;
     this.setState(s => ({ step: Math.min(s.step+1, total-1), errMsg:'' }));
     if(typeof window!=='undefined') window.scrollTo(0,0);
@@ -511,7 +517,7 @@ class Component extends DCLogic {
 
   submit = async () => {
     const miss = this.validateStep();
-    if(miss.length){ this.setState({ errMsg:'Please complete the required items in this section.' }); return; }
+    if(miss.length){ this.setState({ errMsg:this.missMsg(miss) }); return; }
     if(this.state.submitting) return;
     const code = this.state.refCode || this.mkCode();
     const sections = this.schemaFor(this.state.tier);
@@ -546,7 +552,8 @@ class Component extends DCLogic {
         key: this.state.tier+'-'+this.state.step+'-'+i,
         label: fld.l, hint: fld.hint||'', hasHint: !!fld.hint, placeholder: fld.ph||'', wrapStyle,
         isText: fld.t==='text', isArea: fld.t==='area', isSelect: fld.t==='select', isMulti: fld.t==='multi',
-        isYesno: fld.t==='yesno', isDate: fld.t==='date', isAgree: fld.t==='agree', isNote: fld.t==='note', isSubhead: fld.t==='subhead'
+        isYesno: fld.t==='yesno', isDate: fld.t==='date', isAgree: fld.t==='agree', isNote: fld.t==='note', isSubhead: fld.t==='subhead',
+        req: !!fld.req
       };
       if(fld.t==='text'||fld.t==='area'||fld.t==='date'||fld.t==='select'||fld.t==='yesno'){
         base.value = (f[fld.n]!==undefined && f[fld.n]!==null) ? f[fld.n] : '';
