@@ -1,112 +1,211 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>Counterparty Vetting · The Chief Negotiators × Strategic Supply Partners</title>
+<meta name="description" content="The vetting and compliance portal for The Chief Negotiators and Strategic Supply Partners. Every GPU supplier, buyer and compute off-taker is screened, verified and graded before joining the network.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'">
+<meta name="theme-color" content="#0E1C3A">
+<meta property="og:title" content="Counterparty Vetting · The Chief Negotiators × Strategic Supply Partners">
+<meta property="og:description" content="Screened, verified and graded before anything proceeds.">
+<meta property="og:image" content="assets/brand/hero-cluster.jpg">
+<link rel="icon" href="assets/brand/cn-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="brand.css">
+<style>
+.top.home{background:linear-gradient(180deg,rgba(7,13,26,.55) 0%,rgba(7,13,26,.92) 70%,var(--night) 100%),url(assets/brand/hero-cluster.jpg) center 40%/cover no-repeat,var(--night)}
+.home .hero{padding:58px 0 64px}
+.home .hero h1{font-size:68px;max-width:920px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:-34px;position:relative;z-index:2}
+.path{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);padding:34px 32px 28px;text-decoration:none;color:inherit;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
+.path::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--navy-2);transition:background .25s var(--ease)}
+.path:hover{transform:translateY(-4px);box-shadow:0 22px 50px -24px rgba(14,28,58,.35);border-color:var(--gold)}
+.path:hover::before{background:linear-gradient(90deg,var(--gold),var(--gold-lt))}
+.path .ph{display:flex;justify-content:space-between;align-items:flex-start}
+.path .ph svg{width:42px;height:42px}
+.path .ph span{font:500 12px var(--mono);letter-spacing:.2em;color:var(--faint)}
+.path .k{margin-top:26px}
+.path h3{font:500 32px/1.1 var(--serif);color:var(--ink);margin:10px 0 0}
+.path p{margin:12px 0 0;font-size:15px;color:var(--body);flex:1}
+.path ul{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--line-2)}
+.path li{padding:9px 0;border-bottom:1px solid var(--line-2);font-size:13.5px;color:var(--body);display:flex;gap:10px}
+.path li::before{content:"";flex:none;width:5px;height:5px;margin-top:8px;background:var(--gold);transform:rotate(45deg)}
+.path .go{margin-top:22px;font:600 13px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);display:flex;align-items:center;gap:10px}
+.path .go b{font-weight:400;font-size:18px;transition:transform .2s var(--ease)}
+.path:hover .go b{transform:translateX(4px)}
+
+.band{margin-top:80px}
+.band-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+.band-h p{margin:0;color:var(--mute);font-size:16px}
+.protocol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:34px;border:1px solid var(--line);background:var(--card)}
+.protocol>div{padding:28px 26px 30px;position:relative}
+.protocol>div+div{border-left:1px solid var(--line)}
+.protocol .n{font:500 44px/1 var(--serif);color:var(--gold)}
+.protocol h4{font:600 16px var(--sans);color:var(--ink);margin:16px 0 0}
+.protocol p{margin:8px 0 0;font-size:14px;color:var(--body)}
+.protocol .t{margin-top:16px;font:500 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+.dark{margin-top:80px;background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.dark::before{content:"";position:absolute;inset:0;opacity:.35;background-image:linear-gradient(rgba(210,182,126,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(210,182,126,.07) 1px,transparent 1px);background-size:48px 48px}
+.dark .wrap{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;padding-top:70px;padding-bottom:70px}
+.dark .kick{color:var(--gold-lt)}
+.dark .h2{color:#fff}.dark .h2 em{color:var(--gold-lt)}
+.dark p{color:var(--on-navy);font-size:16px}
+.lists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(210,182,126,.22);border:1px solid rgba(210,182,126,.22)}
+.lists div{background:var(--navy);padding:18px 20px}
+.lists b{display:block;font:500 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-lt)}
+.lists span{display:block;margin-top:6px;font-size:14px;color:#fff}
+
+.promise{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:34px}
+.promise div{border-top:2px solid var(--gold);padding-top:18px}
+.promise h4{font:500 24px var(--serif);color:var(--ink);margin:0}
+.promise p{margin:8px 0 0;font-size:14.5px;color:var(--body)}
+
+.foot .reviewer{color:var(--on-navy-mute)}
+@media (max-width:980px){
+  .paths{grid-template-columns:1fr;margin-top:-24px}
+  .protocol{grid-template-columns:1fr 1fr}
+  .protocol>div:nth-child(3){border-left:0}
+  .protocol>div:nth-child(n+3){border-top:1px solid var(--line)}
+  .dark .wrap{grid-template-columns:1fr;gap:30px;padding-top:54px;padding-bottom:54px}
+  .band-h{grid-template-columns:1fr;gap:12px}
+  .promise{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .home .hero{padding:40px 0 56px}
+  .home .hero h1{font-size:42px}
+  .protocol{grid-template-columns:1fr}
+  .protocol>div+div{border-left:0;border-top:1px solid var(--line)}
+  .lists{grid-template-columns:1fr}
+  .path{padding:28px 22px 24px}
+}
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-<link rel="stylesheet" href="colors_and_type.css">
-<style>
-  *, *::before, *::after { box-sizing:border-box; }
-  html, body { margin:0; padding:0; background:#F3EDE3; }
-  #cnw { --cn-black:#F3EDE3; --cn-black-95:#FFFFFF; --cn-gold:#9A5E2E; --cn-gold-bright:#7E4A22; --cn-gold-dim:#C4A079; --cn-gold-tint-12:rgba(154,94,46,0.10); --cn-gold-tint-24:rgba(154,94,46,0.24); --cn-surface:#FBF8F2; --cn-surface-hover:#F2E9D9; --cn-surface-edge:#DBD0BD; --cn-fg:#211A12; --cn-fg-muted:#463B2E; --cn-fg-subtle:#6B5E4F; --cn-fg-faint:#9E9079; --cn-band:#17120F; --cn-band-gold:#CBA078; --cn-band-fg:#E9DFD1; --cn-ease:cubic-bezier(0.22,0.61,0.36,1); --cn-font-display:'Libre Franklin',system-ui,-apple-system,'Segoe UI',sans-serif; --cn-font-body:'Libre Franklin',system-ui,-apple-system,'Segoe UI',sans-serif; }
-  #cnw a { color:inherit; text-decoration:none; }
-  #cnw a { text-decoration:none; }
-  @media (max-width:880px){ #cnw [data-cards]{ grid-template-columns:1fr !important; } }
-  @media (max-width:600px){
-    #cnw { padding:44px 20px !important; }
-    #cnw > img { height:82px !important; margin-bottom:22px !important; }
-    #cnw h1 { white-space:normal !important; font-size:34px !important; }
-    #cnw [data-eyebrow] { font-size:12px !important; letter-spacing:0.18em !important; white-space:normal !important; }
-    #cnw [data-rule] { width:20px !important; }
-  }
-</style>
-</helmet>
-<div id="cnw" style="min-height:100vh; background:var(--cn-black); color:var(--cn-fg-muted); font-family:var(--cn-font-body); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:64px 32px;">
-
-  <img src="assets/logo-light.png" alt="The Chief Negotiators" style="display:block; height:150px; width:auto; max-width:100%; margin:0 auto 40px;">
-
-  <div style="display:flex; flex-direction:column; align-items:center; gap:22px; margin-bottom:54px; max-width:780px;">
-    <div style="display:flex; align-items:center; justify-content:center; gap:18px;">
-      <span data-rule style="width:64px; height:1px; background:var(--cn-gold-tint-24);"></span>
-      <span data-eyebrow style="font-family:var(--cn-font-display); font-size:19px; font-weight:600; letter-spacing:0.34em; text-transform:uppercase; color:var(--cn-gold); white-space:nowrap;">Onboarding &amp; Compliance</span>
-      <span data-rule style="width:64px; height:1px; background:var(--cn-gold-tint-24);"></span>
+<header class="top home">
+  <div class="wrap">
+    <div class="mast">
+      <span class="lockup">
+        <img class="cn" src="assets/brand/cn-white.png" alt="The Chief Negotiators" width="160" height="46">
+        <span class="bar" aria-hidden="true"></span>
+        <img class="ssp" src="assets/brand/ssp-white.png" alt="Strategic Supply Partners" width="54" height="44">
+      </span>
+      <div class="mast-r"><span class="secure"><i></i>Encrypted session</span><span>Counterparty vetting<br>&amp; compliance portal</span></div>
     </div>
-
-    <h1 style="font-family:var(--cn-font-display); font-size:52px; font-weight:700; color:var(--cn-fg); letter-spacing:-0.01em; line-height:1.1; text-align:center; margin:0; white-space:nowrap;">Vetted. Trusted. <span style="font-style:normal; color:var(--cn-gold);">Referred</span>.</h1>
-    <p style="font-family:var(--cn-font-body); font-size:20px; color:var(--cn-fg-muted); text-align:center; max-width:640px; line-height:1.7; margin:0;">The Chief Negotiators is the trusted name our clients rely on. Suppliers we approve and deals we qualify become part of the network we refer them to — handled discreetly, and reviewed before anything proceeds.</p>
-    <p style="font-family:var(--cn-font-body); font-size:17px; color:var(--cn-fg-subtle); text-align:center; max-width:560px; line-height:1.6; margin:6px 0 0;">Select the path that matches your enquiry to begin.</p>
-  </div>
-
-  <div data-cards style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; width:100%; max-width:1180px;">
-
-    <a href="supplier.html" style="position:relative; display:flex; flex-direction:column; text-align:left; background:var(--cn-surface); padding:38px 36px 34px; border:1px solid var(--cn-gold-tint-24); transition:background 300ms var(--cn-ease), border-color 300ms var(--cn-ease);" style-hover="background:var(--cn-surface-hover); border-color:var(--cn-gold);">
-      <span style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--cn-gold);"></span>
-      <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:26px;">
-        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--cn-gold)" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="round">
-          <path d="M24 5l15 6v9c0 11-7 17-15 23-8-6-15-12-15-23v-9z"></path>
-          <path d="M16 24l6 6 11-13"></path>
-        </svg>
-        <span style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.22em; color:var(--cn-fg-faint);">01</span>
+    <div class="hero">
+      <span class="chip"><i></i>By invitation · GPU infrastructure network</span>
+      <h1>Every counterparty is screened, verified and <em>graded</em> before anything proceeds.</h1>
+      <p class="lede">The Chief Negotiators and Strategic Supply Partners admit suppliers, buyers and compute off-takers to one network, on one standard. It is the standard the OEMs and NVIDIA hold us to, and the reason our clients trust who we introduce.</p>
+      <div class="cta">
+        <a class="btn btn-gold" href="#paths">Begin your dossier <span class="arr">→</span></a>
+        <a class="btn btn-line" href="#protocol">How vetting works</a>
       </div>
-      <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--cn-gold); margin-bottom:12px;">Supplier</div>
-      <div style="font-family:var(--cn-font-display); font-size:26px; font-weight:700; color:var(--cn-fg); line-height:1.15; margin-bottom:13px;">Join Our Supplier Network</div>
-      <div style="font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-muted); line-height:1.65; flex:1;">You supply IT hardware — GPUs, servers, components — and want to be vetted and onboarded as an approved supplier.</div>
-      <div style="height:1px; background:var(--cn-gold-tint-24); margin:26px 0 18px;"></div>
-      <div style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--cn-gold); display:flex; align-items:center; gap:10px;">Begin supplier verification <span style="font-size:18px;">&#8594;</span></div>
-    </a>
-
-    <a href="customer.html" style="position:relative; display:flex; flex-direction:column; text-align:left; background:var(--cn-surface); padding:38px 36px 34px; border:1px solid var(--cn-gold-tint-24); transition:background 300ms var(--cn-ease), border-color 300ms var(--cn-ease);" style-hover="background:var(--cn-surface-hover); border-color:var(--cn-gold);">
-      <span style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--cn-gold);"></span>
-      <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:26px;">
-        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--cn-gold)" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="round">
-          <path d="M14 4h14l8 8v32H14z"></path>
-          <path d="M28 4v9h8"></path>
-          <path d="M19 25l3 3 8-9"></path>
-        </svg>
-        <span style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.22em; color:var(--cn-fg-faint);">02</span>
+      <div class="stats">
+        <div><b>4</b><span>Stage review protocol</span></div>
+        <div><b>6<small>+</small></b><span>Sanctions &amp; export lists screened</span></div>
+        <div><b>100<small>%</small></b><span>Human review, every file</span></div>
+        <div><b>0</b><span>Counterparties shared before approval</span></div>
       </div>
-      <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--cn-gold); margin-bottom:12px;">Customer</div>
-      <div style="font-family:var(--cn-font-display); font-size:26px; font-weight:700; color:var(--cn-fg); line-height:1.15; margin-bottom:13px;">Complete Deal Compliance</div>
-      <div style="font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-muted); line-height:1.65; flex:1;">You are purchasing for a specific deal and need to complete compliance and qualification for the order.</div>
-      <div style="height:1px; background:var(--cn-gold-tint-24); margin:26px 0 18px;"></div>
-      <div style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--cn-gold); display:flex; align-items:center; gap:10px;">Begin compliance <span style="font-size:18px;">&#8594;</span></div>
-    </a>
+    </div>
+  </div>
+</header>
 
-    <a href="tenant.html" style="position:relative; display:flex; flex-direction:column; text-align:left; background:var(--cn-surface); padding:38px 36px 34px; border:1px solid var(--cn-gold-tint-24); transition:background 300ms var(--cn-ease), border-color 300ms var(--cn-ease);" style-hover="background:var(--cn-surface-hover); border-color:var(--cn-gold);">
-      <span style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--cn-gold);"></span>
-      <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:26px;">
-        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="var(--cn-gold)" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="round">
-          <rect x="7" y="9" width="34" height="12"></rect>
-          <rect x="7" y="27" width="34" height="12"></rect>
-          <path d="M13 15h0.02"></path>
-          <path d="M13 33h0.02"></path>
-          <path d="M20 15h14"></path>
-          <path d="M20 33h14"></path>
-        </svg>
-        <span style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.22em; color:var(--cn-fg-faint);">03</span>
+<main class="wrap">
+  <section class="paths" id="paths" aria-label="Choose your dossier">
+    <a class="path" href="supplier.html">
+      <div class="ph">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#A88A4F" stroke-width="1.6" stroke-linejoin="round"><path d="M24 5l15 6v9c0 11-7 17-15 23-8-6-15-12-15-23v-9z"/><path d="M16.5 24l5.5 5.5 10-11"/></svg>
+        <span>01</span>
       </div>
-      <div style="font-family:var(--cn-font-display); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--cn-gold); margin-bottom:12px;">Compute</div>
-      <div style="font-family:var(--cn-font-display); font-size:26px; font-weight:700; color:var(--cn-fg); line-height:1.15; margin-bottom:13px;">Qualify a Compute Deal</div>
-      <div style="font-family:var(--cn-font-body); font-size:16px; color:var(--cn-fg-muted); line-height:1.65; flex:1;">You represent a tenant seeking large-scale GPU compute capacity and want the opportunity assessed and structured.</div>
-      <div style="height:1px; background:var(--cn-gold-tint-24); margin:26px 0 18px;"></div>
-      <div style="font-family:var(--cn-font-display); font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--cn-gold); display:flex; align-items:center; gap:10px;">Begin qualification <span style="font-size:18px;">&#8594;</span></div>
+      <div class="kick k">Supplier</div>
+      <h3>Join the supplier network</h3>
+      <p>You sell GPUs, servers, networking or complete clusters and want to be approved to supply our clients.</p>
+      <ul><li>Entity, ownership and board verification</li><li>Channel authorization and chain of custody</li><li>Bank account and export-control review</li></ul>
+      <div class="go">Begin supplier vetting <b>→</b></div>
     </a>
+    <a class="path" href="buyer.html">
+      <div class="ph">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#A88A4F" stroke-width="1.6" stroke-linejoin="round"><rect x="7" y="8" width="34" height="10"/><rect x="7" y="22" width="34" height="10"/><path d="M12 13h.01M12 27h.01M19 13h16M19 27h16"/><path d="M15 38h18M24 32v6"/></svg>
+        <span>02</span>
+      </div>
+      <div class="kick k">GPU buyer</div>
+      <h3>Qualify for an allocation</h3>
+      <p>You are purchasing GPU systems and need end-user qualification before a quote, allocation or purchase order.</p>
+      <ul><li>Mirrors the OEM and NVIDIA end-user discovery</li><li>End user, funding, title and site in one file</li><li>Export screening and post-delivery terms</li></ul>
+      <div class="go">Begin buyer qualification <b>→</b></div>
+    </a>
+    <a class="path" href="compute.html">
+      <div class="ph">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#A88A4F" stroke-width="1.6" stroke-linejoin="round"><circle cx="24" cy="24" r="16"/><path d="M8 24h32M24 8c5 5 7 10 7 16s-2 11-7 16c-5-5-7-10-7-16s2-11 7-16z"/></svg>
+        <span>03</span>
+      </div>
+      <div class="kick k">Compute capacity</div>
+      <h3>Qualify a capacity deal</h3>
+      <p>You represent an off-taker seeking large-scale GPU capacity under lease or reserved contract.</p>
+      <ul><li>Requirement and commercial structure</li><li>Credit, funding and signatory authority</li><li>End use and access screening</li></ul>
+      <div class="go">Begin capacity qualification <b>→</b></div>
+    </a>
+  </section>
 
+  <section class="band" id="protocol">
+    <div class="band-h">
+      <div><div class="kick">The protocol</div><h2 class="h2">Four stages. <em>No shortcuts.</em></h2></div>
+      <p>Each dossier is read by a named reviewer, tested against independent sources and graded. Approval requires a clean screen, verified evidence and senior sign-off. Nothing about your file is shared with a counterparty before then.</p>
+    </div>
+    <div class="protocol">
+      <div><div class="n">01</div><h4>Submit</h4><p>A structured dossier aligned to the OEM end-user forms, completed once and saved as you go.</p><div class="t">You · 20–35 min</div></div>
+      <div><div class="n">02</div><h4>Screen</h4><p>The entity, every owner, director and named party is screened against U.S., UK and EU sanctions and export lists.</p><div class="t">Our desk · Day 1</div></div>
+      <div><div class="n">03</div><h4>Verify</h4><p>Registry, bank, site operator, references and OEM authorization are confirmed directly at the source.</p><div class="t">Our desk · Days 1–4</div></div>
+      <div><div class="n">04</div><h4>Decide</h4><p>A graded recommendation, a documented decision and senior sign-off. Approved parties are released to the network.</p><div class="t">Written outcome</div></div>
+    </div>
+  </section>
+</main>
+
+<section class="dark">
+  <div class="wrap">
+    <div>
+      <div class="kick">What we screen against</div>
+      <h2 class="h2">The lists that <em>matter</em> to the OEM.</h2>
+      <p style="margin-top:16px">Advanced GPUs and the systems built on them are controlled items. A single undisclosed end user or unauthorised re-export can stop an allocation for everyone in the chain. We screen so that does not happen on our watch.</p>
+    </div>
+    <div class="lists">
+      <div><b>OFAC</b><span>Specially Designated Nationals</span></div>
+      <div><b>BIS</b><span>Entity List</span></div>
+      <div><b>BIS</b><span>Military End-User List</span></div>
+      <div><b>BIS</b><span>Unverified List</span></div>
+      <div><b>U.S. EAR</b><span>ECCN 3A090 / 4A090 controls</span></div>
+      <div><b>U.S. EAR</b><span>Country Group D:5</span></div>
+      <div><b>UK OFSI</b><span>Consolidated List</span></div>
+      <div><b>EU</b><span>Consolidated Financial Sanctions</span></div>
+      <div><b>OEM</b><span>End-user discovery requirements</span></div>
+      <div><b>Adverse media</b><span>Entity and principals</span></div>
+    </div>
   </div>
+</section>
 
-  <div style="margin-top:50px; display:flex; align-items:center; gap:12px; padding-top:24px; border-top:1px solid var(--cn-gold-tint-24); max-width:1180px; width:100%; justify-content:center;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cn-gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="5" y="11" width="14" height="9"></rect>
-      <path d="M8 11V8a4 4 0 0 1 8 0v3"></path>
-    </svg>
-    <span style="font-family:var(--cn-font-body); font-size:13px; font-style:normal; color:var(--cn-fg-faint); text-align:center;">Confidential. Submitted securely and reviewed by our team before anything proceeds.</span>
+<main class="wrap">
+  <section class="band" style="margin-top:72px">
+    <div class="kick">Our commitment to you</div>
+    <h2 class="h2">Discreet by design.</h2>
+    <div class="promise">
+      <div><h4>Held in confidence</h4><p>Your dossier is restricted to the named review team and used only for due diligence and compliance record-keeping.</p></div>
+      <div><h4>Shared only when required</h4><p>Information goes to an OEM, NVIDIA or an authority only where the transaction requires it, and never to a counterparty without your agreement.</p></div>
+      <div><h4>One standard for all</h4><p>The same depth for every party, whatever the size of the transaction. It is what makes an approval from us worth something.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="lockup"><img class="cn" src="assets/brand/cn-white.png" alt="The Chief Negotiators" width="104" height="30"><span class="bar"></span><img class="ssp" src="assets/brand/ssp-white.png" alt="Strategic Supply Partners" width="36" height="30"></span>
+    <span>Chief Negotiators LLC · St. Petersburg, Florida · <a href="privacy.html">Privacy</a> · <a class="reviewer" href="review.html">Reviewer sign-in</a></span>
   </div>
-
-</div>
-</x-dc>
+</footer>
 </body>
 </html>
